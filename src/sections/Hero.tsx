@@ -50,7 +50,7 @@ function Hero() {
           </div>
           <h1 className=" z-20 text-[35px] whitespace-nowrap sm:text-6xl lg:text-7xl font-display font-bold leading-tight">
             Hi, I'm <span className="text-white">Issa</span>
-            <span className=" block items-center gradient-text text-nowrap  w-[130%]">
+            <span className="block items-center gradient-text text-nowrap w-max text-3xl md:text-7xl">
               <TextType
                 text={[
                   "Full Stack Developer",

@@ -69,7 +69,7 @@ function Hero() {
           <div className="text-[15px] z-20 text-center lg:text-left sm:text-xl text-white md:text-muted-foreground font-mono leading-relaxed max-w-lg h-24">
             <TextType
               text={[
-                ".NET Developer Intern & ASP.NET Core & SQL Server (T-SQL) & ADO.NET RESTful APIs",
+                ".NET Developer Intern & ASP.NET Core & SQL Server (T-SQL) & EF Core RESTful APIs",
               ]}
               typingSpeed={15}
               pauseDuration={1500}
@@ -126,7 +126,7 @@ function Hero() {
           transition={{ duration: 1, delay: 0.2 }}
           className="absolute right-0 w-50 lg:relative  lg:w-full flex justify-center items-center h-100 lg:h-125"
         >
-          <div className="absolute opacity-[0.5] lg:opacity-100 -top-35 right-0 md:top-0  bottom-0 w-fit bg-liner-to-tr from-primary/20 to-secondary/20 rounded-full">
+          <div className="absolute opacity-[0.5] lg:opacity-100 -top-35 right-0 md:top-0 bottom-0 w-fit bg-liner-to-tr from-primary/20 to-secondary/20 rounded-full">
             <svg
               ref={svgRef}
               className="w-full h-full relative z-10 drop-shadow-[0_0_10px_rgba(10,102,194,0.3)] [&_path]:stroke-primary [&_path]:stroke-[8px] [&_path]:fill-none"

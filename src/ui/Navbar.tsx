@@ -15,9 +15,9 @@ function Navbar() {
 
   const navLinks = [
     { name: "Home", href: "#home" },
+    {name: "About Me", href: "#about-me"},
     { name: "Tech Stack", href: "#skills" },
     { name: "Projects", href: "#projects" },
-    { name: "Contact", href: "#contact" },
   ];
 
   const scrollTo = (href: string) => {

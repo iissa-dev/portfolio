@@ -1,8 +1,43 @@
 import { faEnvelope, faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "motion/react";
+import { useState } from "react";
 
 function Contact() {
+  const [result, setResult] = useState<string>("");
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
+
+  const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setIsSubmitting(true);
+    setResult("Sending...");
+
+    const currentForm = event.currentTarget;
+    const formData = new FormData(currentForm);
+    
+    formData.append("access_key", "aed01306-92a5-4881-89b3-0addd148450a");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setResult("Message sent successfully!");
+        currentForm.reset();
+      } else {
+        setResult(data.message || "Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      setResult("Network error. Please check your connection.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section
       id="contact"
@@ -78,13 +113,16 @@ function Contact() {
             viewport={{ once: true }}
             className="lg:col-span-3"
           >
-            <form className="glass-panel p-8 md:p-10 rounded-3xl space-y-6">
+            <form onSubmit={onSubmit} className="glass-panel p-8 md:p-10 rounded-3xl space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label className="text-sm font-mono text-muted-foreground">
                     Name
                   </label>
                   <input
+                    type="text"
+                    name="name"
+                    required
                     className="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/20 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/50 transition-all"
                     placeholder="John Doe"
                   />
@@ -95,6 +133,8 @@ function Contact() {
                   </label>
                   <input
                     type="email"
+                    name="email"
+                    required
                     className="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/20 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/50 transition-all"
                     placeholder="john@example.com"
                   />
@@ -106,6 +146,8 @@ function Contact() {
                   Message
                 </label>
                 <textarea
+                  name="message"
+                  required
                   rows={5}
                   className="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/20 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/50 transition-all resize-none"
                   placeholder="How can I help you?"
@@ -114,10 +156,19 @@ function Contact() {
 
               <button
                 type="submit"
-                className="w-full py-4 rounded-xl font-bold bg-primary text-white hover:bg-primary/90 transition-all duration-300 shadow-[0_0_15px_rgba(10,102,194,0.3)] hover:shadow-[0_0_25px_rgba(10,102,194,0.6)] disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2 group"
+                disabled={isSubmitting}
+                className="w-full py-4 rounded-xl font-bold bg-primary text-white hover:bg-primary/90 transition-all duration-300 shadow-[0_0_15px_rgba(10,102,194,0.3)] hover:shadow-[0_0_25px_rgba(10,102,194,0.6)] disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 group"
               >
-                Send Message
+                {isSubmitting ? "Sending..." : "Send Message"}
               </button>
+
+              {result && (
+                <p className={`text-sm font-mono text-center mt-2 ${
+                  result.includes("successfully") ? "text-green-400" : "text-amber-400"
+                }`}>
+                  {result}
+                </p>
+              )}
             </form>
           </motion.div>
         </div>

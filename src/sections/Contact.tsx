@@ -68,7 +68,7 @@ function Contact() {
             viewport={{ once: true }}
             className="lg:col-span-2 space-y-6"
           >
-            <div className="glass-panel p-8 rounded-3xl">
+            <div className="glass-panel p-8 rounded-3xl relative">
               <h3 className="text-2xl font-bold text-white mb-6 font-display">
                 Contact Information
               </h3>
@@ -86,7 +86,7 @@ function Contact() {
                       href="mailto:issaa0525@gemail.com"
                       className="text-white hover:text-primary transition-colors font-medium"
                     >
-                      issaa0525@gemail.com
+                      issaa0525@gmail.com
                     </a>
                   </div>
                 </div>

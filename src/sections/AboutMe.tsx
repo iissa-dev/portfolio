@@ -1,3 +1,4 @@
+import { CodeXml, Database } from "lucide-react";
 import { motion } from "motion/react";
 
 const AboutMe = () => {
@@ -120,27 +121,44 @@ const AboutMe = () => {
           </div>
           <div>
             <motion.div
-              className="mb-10 md:w-150"
+              className="mb-6 md:max-w-xl text-muted-foreground leading-relaxed text-base"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
             >
-              I'm Issa, a results-oriented Full Stack Developer specializing in
-              robust, efficient systems using the .NET framework. With a focus
-              on clean code, testable architecture, and optimized performance, I
-              bring technical proficiency and a problem-solving mindset to every
-              project.
+              I'm <span className="text-white font-bold">Issa</span>, a
+              results-oriented Full Stack Developer specializing in the{" "}
+              <span className="text-primary font-medium">.NET ecosystem</span>.
+              With a strong passion for{" "}
+              <span className="text-white font-medium">clean code</span> and{" "}
+              <span className="text-primary font-medium">
+                scalable architecture
+              </span>
+              , I focus on building robust and efficient systems that deliver
+              real value. I bring a problem-solving mindset and technical
+              excellence to every project I work on.
             </motion.div>
+
             <motion.div
-              className="md:w-150"
+              className="md:max-w-xl text-muted-foreground leading-relaxed text-base"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
             >
-              My work centers on building scalable backend solutions with
-              ASP.NET Core and T-SQL, seamlessly paired with modern frontend
-              technologies like React. I am passionate about creating efficient
-              APIs and maintaining sound database practices.
+              My expertise centers on developing high-performance backend
+              solutions using{" "}
+              <span className="text-primary font-medium">ASP.NET Core</span>,{" "}
+              <span className="text-primary font-medium">EF Core</span>, and{" "}
+              <span className="text-white font-medium">T-SQL</span>, while
+              creating modern and responsive frontends with{" "}
+              <span className="text-secondary font-medium">React</span> and{" "}
+              <span className="text-secondary font-medium">Tailwind CSS</span>.
+              I'm particularly passionate about designing{" "}
+              <span className="text-primary font-medium">clean APIs</span>,
+              optimizing database performance, and building applications that
+              can handle high traffic with reliability and speed.
             </motion.div>
           </div>
         </div>

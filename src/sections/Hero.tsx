@@ -1,13 +1,11 @@
 import { faGithub, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
-import { faArrowRight, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useRef } from "react";
 import TextType from "../animations/TextType";
 import { motion } from "motion/react";
+import myCV from "../assets/Issa_CV.pdf";
 function Hero() {
-  const scrollToContact = () => {
-    document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" });
-  };
   const svgRef = useRef<SVGSVGElement | null>(null);
   useEffect(() => {
     if (svgRef.current) {
@@ -81,16 +79,13 @@ function Hero() {
             />
           </div>
           <div className="flex flex-wrap items-center gap-4 mt-4">
-            <button
-              onClick={scrollToContact}
+            <a
               className="px-8 py-4 rounded-xl font-semibold bg-primary text-white hover:bg-primary/90 transition-all duration-300 shadow-[0_0_20px_rgba(10,102,194,0.4)] hover:shadow-[0_0_30px_rgba(10,102,194,0.6)] flex items-center gap-2 group"
+              href={myCV}
+              download={myCV}
             >
-              Contact Me
-              <FontAwesomeIcon
-                icon={faArrowRight}
-                className="w-5 h-5 group-hover:translate-x-1 transition-transform"
-              />
-            </button>
+              Download My CV
+            </a>
 
             <div className="flex items-center gap-3 ml-2">
               <a

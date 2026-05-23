@@ -1,71 +1,27 @@
 import { motion } from "motion/react";
-import AspImage from "../assets/images/Asp.netCore.jpg";
-import WebApiImage from "../assets/images/Microsoft_.Net_Web_API.png";
-import JsImage from "../assets/images/JavaScript-logo (1).png";
-import Csharp from "../assets/images/Csharp_Logo.png";
-import SqlImage from "../assets/images/microsoft-sql-server.jpg";
-import reactImage from "../assets/images/React-icon.svg.png";
-import typeScript from "../assets/images/Typescript_logo_2020.svg.png";
-import tailwindImage from "../assets/images/tailwind.svg";
+// import AspImage from "../assets/images/Asp.netCore.jpg";
+import {
+  CodeXml,
+  SquareDashedBottomCode,
+  Database,
+  RadioTower,
+  PanelsTopLeft,
+  FileType,
+  VectorSquare,
+  FileBracesCorner,
+} from "lucide-react";
 
-const BACKEND = [
-  {
-    image: WebApiImage,
-    label: "REST Web API",
-    description:
-      "Building RESTful APIs to expose data and business logic for client applications.",
-  },
-  {
-    image: AspImage,
-    label: "ASP.NET Core",
-    description:
-      "Modern high-performance framework for building scalable web applications and APIs.",
-  },
-  {
-    image: SqlImage,
-    label: "SQL Server (T-SQL)",
-    description:
-      "Designing relational databases, writing queries, stored procedures, and optimizing performance.",
-  },
-  {
-    image: Csharp,
-    label: "C#",
-    description:
-      "Object-oriented programming language used to build backend services, APIs, and business logic.",
-  },
-];
-
-const FRONTEND = [
-  {
-    image: JsImage,
-    label: "JavaScript",
-    description:
-      "Core language of the web used to create dynamic and interactive user interfaces.",
-  },
-  {
-    image: reactImage,
-    label: "React (Vite)",
-    description:
-      "Component-based library for building fast and modern user interfaces.",
-  },
-  {
-    image: typeScript,
-    label: "TypeScript",
-    description:
-      "Typed superset of JavaScript that improves maintainability and scalability.",
-  },
-  {
-    image: tailwindImage,
-    label: "Tailwind CSS",
-    description:
-      "Utility-first CSS framework for rapidly building modern responsive designs.",
-  },
-];
-
-function TechStack() {
+const TechStack2 = () => {
+  const mainIconStyle = "bg-primary/20 rounded-md p-2";
+  const mainIconStyleSecondary = "bg-secondary/20 rounded-md p-2";
+  const mainCardStyle =
+    "rounded-3xl glass-panel hover:border-primary/30 transition-all duration-500 p-4";
+  const mainCardStyleSecondary =
+    "rounded-3xl glass-panel hover:border-secondary/30 transition-all duration-500 p-4";
   return (
-    <section id="skills" className="py-24 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="skills" className="py-24 relative overflow-hidden">
+      {/* {Page Header} */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -81,72 +37,150 @@ function TechStack() {
           Technologies, frameworks, and tools I use to build robust and scalable
           applications.
         </p>
-        <div className="grid md:grid-cols-2 gap-10 mt-10">
-          {/* BACKEND */}
+        {/* {Tech Stack Container} */}
+        <div className="grid md:grid-cols-1 gap-10 mt-10">
+          {/* {Back End} */}
           <div>
-            <h3 className="text-xl font-bold mb-6 neon-text text-primary">
-              Backend
-            </h3>
-            <div className="grid gap-5">
-              {BACKEND.map((tech, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 15 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className="glass-panel glass-panel-hover rounded-xl p-5 flex gap-4 items-start min-h-27.5"
-                >
-                  <img
-                    src={tech.image}
-                    alt={tech.label}
-                    className="w-12 h-12 object-contain"
-                  />
-                  <div>
-                    <h4 className="font-semibold text-lg">{tech.label}</h4>
-                    <p className="text-muted-foreground text-sm mt-1">
-                      {tech.description}
-                    </p>
+            <div className="mb-4 border-l-2 border-primary px-2 p-2 rounded-r-lg">
+              <h3 className="text-2xl font-bold ">BACKEND_LAYER</h3>
+            </div>
+            <div className="grid md:grid-cols-4 grid-rows-2 gap-4">
+              <div
+                className={`md:col-span-2 md:row-span-2 group rounded-3xl flex flex-col ${mainCardStyle}`}
+              >
+                <CodeXml size={50} className={`${mainIconStyle} mb-4`} />
+                <h3 className="font-bold mb-1">ASP.NET Core</h3>
+                <p className="text-muted-foreground mb-4">
+                  Modern high-performance framework for building scalable web
+                  applications and APIs.
+                </p>
+                <div className="mt-auto">
+                  <div className="flex items-center justify-between mb-2 text-[12px]">
+                    <p className="">EXPERTISE_LEVEL</p>
+                    <span className="text-primary">95%</span>
                   </div>
-                </motion.div>
-              ))}
+                  <div className="glass-panel w-full h-2 rounded-2xl">
+                    <div
+                      style={{ width: "95%" }}
+                      className="bg-primary h-2 rounded-2xl"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+              <div className={`md:col-span-2 md:row-span-1 ${mainCardStyle}`}>
+                <div className="flex items-center gap-3 font-bold mb-3">
+                  <SquareDashedBottomCode size={50} className={mainIconStyle} />
+                  <h3 className="font-bold">C# Engin</h3>
+                </div>
+                <p className="text-muted-foreground mb-4">
+                  Typed precision for complex business logic and enterpies-grade
+                  scalability
+                </p>
+                <div className="flex items-center text-[12px] gap-2">
+                  <span className="text-xs font-mono px-2.5 py-1 rounded-md bg-white/5 text-primary border border-primary/20">
+                    OOP
+                  </span>
+                  <span className="text-xs font-mono px-2.5 py-1 rounded-md bg-white/5 text-primary border border-primary/20">
+                    LINQ
+                  </span>
+                  <span className="text-xs font-mono px-2.5 py-1 rounded-md bg-white/5 text-primary border border-primary/20">
+                    ASYNIC
+                  </span>
+                </div>
+              </div>
+              <div className={`${mainCardStyle}`}>
+                <Database size={50} className={`${mainIconStyle} mb-4`} />
+                <h3 className="font-bold mb-1">SQL SERVER</h3>
+                <p className="text-muted-foreground">
+                  Designing relational databases
+                </p>
+              </div>
+              <div className={`${mainCardStyle}`}>
+                <RadioTower size={50} className={`${mainIconStyle} mb-4`} />
+                <h3 className="font-bold mb-1">REST API</h3>
+                <p className="text-muted-foreground">Building RESTful APIs</p>
+              </div>
             </div>
           </div>
-
-          {/* FRONTEND */}
+          {/* {Font End} */}
           <div>
-            <h3 className="text-xl font-bold mb-6 neon-text-purple text-secondary">
-              Frontend
-            </h3>
-            <div className="grid gap-5">
-              {FRONTEND.map((tech, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 15 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className="glass-panel glass-panel-hover rounded-xl p-5 flex gap-4 items-start min-h-27.5"
-                >
-                  <img
-                    src={tech.image}
-                    alt={tech.label}
-                    className="w-12 h-12 object-contain"
-                  />
-                  <div>
-                    <h4 className="font-semibold text-lg">{tech.label}</h4>
-                    <p className="text-muted-foreground text-sm mt-1">
-                      {tech.description}
-                    </p>
+            <div className="mb-4 border-l-2 border-secondary px-2 p-2 rounded-r-lg">
+              <h3 className="text-2xl font-bold ">FRONTEND_LAYER</h3>
+            </div>
+            <div className="grid md:grid-cols-4 grid-rows-2 gap-4">
+              <div
+                className={`md:col-span-2 md:row-span-2 group rounded-3xl flex flex-col ${mainCardStyleSecondary}`}
+              >
+                <PanelsTopLeft
+                  size={50}
+                  className={`${mainIconStyleSecondary} mb-4`}
+                />
+                <h3 className="font-bold mb-1">React Ecosystem</h3>
+                <p className="text-muted-foreground mb-4">
+                  Developing interactive, high-fidelity neural-interfaces.
+                  Specializing in component modularity, state synchronization,
+                  and reactive UI architectures.
+                </p>
+                <div className="mt-auto">
+                  <div className="flex items-center justify-between mb-2 text-[12px]">
+                    <p className="">EXPERTISE_LEVEL</p>
+                    <span className="text-secondary">95%</span>
                   </div>
-                </motion.div>
-              ))}
+                  <div className="glass-panel w-full h-2 rounded-2xl">
+                    <div
+                      style={{ width: "95%" }}
+                      className="bg-secondary h-2 rounded-2xl"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+              <div className={`${mainCardStyleSecondary}`}>
+                <VectorSquare
+                  size={50}
+                  className={`${mainIconStyleSecondary} mb-4`}
+                />
+                <h3 className="font-bold mb-1">TAILWIND</h3>
+                <p className="text-muted-foreground">CSS framework</p>
+              </div>
+              <div className={`${mainCardStyleSecondary}`}>
+                <FileBracesCorner
+                  size={50}
+                  className={`${mainIconStyleSecondary} mb-4`}
+                />
+                <h3 className="font-bold mb-1">JavaScript</h3>
+                <p className="text-muted-foreground">
+                  Core language of the web
+                </p>
+              </div>
+              <div
+                className={`md:col-span-2 md:row-span-1 ${mainCardStyleSecondary}`}
+              >
+                <div className="flex items-center gap-3 font-bold mb-3">
+                  <FileType size={50} className={mainIconStyleSecondary} />
+                  <h3 className="font-bold">TYPESCRIPT</h3>
+                </div>
+                <p className="text-muted-foreground mb-4">
+                  Typed superset of JavaScript that improves maintainability and
+                  scalability.
+                </p>
+                <div className="flex items-center text-[12px] gap-2">
+                  <span className="text-xs font-mono px-2.5 py-1 rounded-md bg-white/5 text-secondary border border-secondary/20">
+                    TYPE
+                  </span>
+                  <span className="text-xs font-mono px-2.5 py-1 rounded-md bg-white/5 text-secondary border border-secondary/20">
+                    INTERFACES
+                  </span>
+                  <span className="text-xs font-mono px-2.5 py-1 rounded-md bg-white/5 text-secondary border border-secondary/20">
+                    OOP
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
   );
-}
+};
 
-export default TechStack;
+export default TechStack2;

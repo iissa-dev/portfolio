@@ -1,4 +1,3 @@
-import { CodeXml, Database } from "lucide-react";
 import { motion } from "motion/react";
 
 const AboutMe = () => {

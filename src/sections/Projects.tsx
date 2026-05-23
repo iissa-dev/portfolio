@@ -114,7 +114,7 @@ function Projects() {
                       <div className="absolute inset-0 bg-linear-to-t from-[#151b2d]/80 via-transparent to-transparent"></div>
                     </div>
                   ) : (
-                    <div className="w-full h-full bg-accent flex items-center justify-center">
+                    <div className="md:w-full md:h-full bg-accent flex items-center justify-center">
                       <span className="text-muted-foreground font-mono">
                         In Progress
                       </span>
